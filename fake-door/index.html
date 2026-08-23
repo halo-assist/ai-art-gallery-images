@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streak — the 5-minute daily habit tracker</title>
+<meta name="description" content="Streak is a dead-simple daily habit tracker: 5-minute check-ins, a streak you don't want to break, and a weekly review. Join the waitlist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#26241F;--muted:#6E6A63;--accent:#B5673E;--accent-dark:#8F4E2C;--sage:#7A8B6F;--cream:#FAF7F2;--line:#E8E1D6;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:'Playfair',serif;font-size:22px;font-weight:700;letter-spacing:.5px}
+.logo span{color:var(--accent)}
+nav .tag{font-size:13px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.hero{padding:70px 0 90px;text-align:center}
+.kicker{font-family:'Caveat',cursive;font-size:26px;color:var(--accent)}
+h1{font-family:'Playfair',serif;font-size:54px;line-height:1.12;margin:14px 0 18px;font-weight:700}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:640px;margin:0 auto 34px}
+.form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto}
+.form input[type=email]{flex:1;min-width:250px;padding:15px 18px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;background:var(--white)}
+.form button{padding:15px 26px;border:none;border-radius:12px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer}
+.form button:hover{background:var(--accent-dark)}
+.form-note{font-size:13px;color:var(--muted);margin-top:12px}
+.msg{margin-top:18px;font-weight:600;font-size:15px;display:none}
+.msg.ok{color:var(--sage)} .msg.err{color:#C0392B}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:20px 0 90px}
+.card{background:var(--white);border:1.5px solid var(--line);border-radius:18px;padding:30px 26px}
+.card .ic{font-size:26px;margin-bottom:12px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--muted)}
+.howto{background:var(--white);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:70px 0}
+.howto h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:40px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.step .n{font-family:'Playfair',serif;font-size:34px;color:var(--accent)}
+.step h4{font-size:16px;margin:8px 0 6px}
+.step p{font-size:14px;color:var(--muted)}
+.faq{padding:70px 0}
+.faq h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:36px}
+details{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+summary{font-weight:600;cursor:pointer;font-size:15px}
+details p{font-size:14px;color:var(--muted);margin-top:10px}
+.cta{text-align:center;padding:30px 0 80px}
+.cta h2{font-family:'Playfair',serif;font-size:32px;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:24px}
+footer{border-top:1.5px solid var(--line);padding:26px 0;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:760px){h1{font-size:38px}.feats,.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <div class="logo">Streak<span>.</span></div>
+  <div class="tag">waitlist open</div>
+</nav>
+
+<section class="hero wrap">
+  <div class="kicker">the 5-minute habit tracker</div>
+  <h1>Build habits so small<br>you can't say no</h1>
+  <p class="sub">Streak is a dead-simple daily tracker: check in in under a minute,
+  watch your streak grow, and get a gentle weekly review. No complex charts,
+  no gamified noise — just consistency.</p>
+  <form class="form" id="wl" action="https://formsubmit.co/{FORM_EMAIL}" method="POST">
+    <input type="hidden" name="_subject" value="Streak waitlist signup">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="email" name="email" placeholder="you@email.com" required>
+    <button type="submit">Join the waitlist</button>
+  </form>
+  <div class="msg" id="msg"></div>
+  <div class="form-note">Free during beta · iOS &amp; Android · No spam, ever</div>
+</section>
+
+<section class="feats wrap">
+  <div class="card"><div class="ic">⏱️</div><h3>Under a minute a day</h3>
+    <p>Check in once a day. If a habit takes more than five minutes to log, it's too complicated.</p></div>
+  <div class="card"><div class="ic">🔥</div><h3>A streak you protect</h3>
+    <p>One number that matters. Miss a day and it resets — which is exactly why you won't.</p></div>
+  <div class="card"><div class="ic">📬</div><h3>Weekly review, not noise</h3>
+    <p>Every Sunday: what worked, what slipped, what to adjust next week. No push-notification spam.</p></div>
+</section>
+
+<section class="howto">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h4>Pick 1–3 habits</h4>
+        <p>Start tiny. Streak is built for 5-minute versions of the habits you keep postponing.</p></div>
+      <div class="step"><div class="n">02</div><h4>Check in daily</h4>
+        <p>One tap in the morning or evening. Your streak is the only number that matters.</p></div>
+      <div class="step"><div class="n">03</div><h4>Review weekly</h4>
+        <p>A two-minute Sunday review turns streaks into lasting routines.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq wrap">
+  <h2>Questions</h2>
+  <details><summary>When will the app be available?</summary>
+    <p>We're building it now and inviting the waitlist in small batches — the first batch gets free lifetime access during beta. Joining early is the only way to get in.</p></details>
+  <details><summary>What platforms?</summary>
+    <p>iOS and Android first, with a web version to follow.</p></details>
+  <details><summary>Is my data private?</summary>
+    <p>Yes. Your habits and streaks stay on your device and in your account — we don't sell data, and there are no ads.</p></details>
+</section>
+
+<section class="cta wrap">
+  <h2>Start your streak</h2>
+  <p>Join the waitlist — first batch gets free lifetime beta access.</p>
+  <form class="form" id="wl2" action="https://formsubmit.co/{FORM_EMAIL}" method="POST">
+    <input type="hidden" name="_subject" value="Streak waitlist signup">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="email" name="email" placeholder="you@email.com" required>
+    <button type="submit">Join the waitlist</button>
+  </form>
+  <div class="msg" id="msg2"></div>
+</section>
+
+<footer class="wrap">Streak · a fake-door test that respects your inbox</footer>
+
+<script>
+function wire(formId, msgId){
+  var form=document.getElementById(formId), msg=document.getElementById(msgId);
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data=new FormData(form);
+    fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(j.success!==false){ msg.textContent='You're on the list! We'll email you when your batch opens.'; msg.className='msg ok'; msg.style.display='block'; form.reset(); }
+        else{ msg.textContent='Something went wrong — try again or email us directly.'; msg.className='msg err'; msg.style.display='block'; }
+      })
+      .catch(function(){ msg.textContent='Something went wrong — try again or email us directly.'; msg.className='msg err'; msg.style.display='block'; });
+  });
+}
+wire('wl','msg'); wire('wl2','msg2');
+</script>
+</body>
+</html>
