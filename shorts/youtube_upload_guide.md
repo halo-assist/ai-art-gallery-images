@@ -3,6 +3,10 @@
 All 10 Shorts are rendered, QA-passed and ready to publish. The agent cannot log into a
 Google account, so this last step is yours. Estimated time: 20–30 minutes for all 10.
 
+**v2 (2026-09-21) — rebuilt per your feedback:** scene imagery added back (AI-generated, 6 scenes
+per Short with slow pan/zoom) and a new narrator voice with wider intonation (en-GB "Ryan").
+All 10 re-rendered + re-QA'd. Titles, descriptions and upload steps are unchanged.
+
 ## What to do
 
 1. **Pick the channel.** Any Google account you control; a fresh channel keeps this test
