@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Painpoint Index — business ideas from real complaints</title>
+<meta name="description" content="A curated database of business ideas mined from public complaints. Free sample: five full examples with verbatim quotes and source links.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#26241F;--muted:#6E6A63;--accent:#B5673E;--accent-dark:#8F4E2C;--sage:#7A8B6F;--cream:#FAF7F2;--line:#E8E1D6;--white:#fff;--soft:#F3EDE4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a{color:var(--accent-dark)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:'Playfair',serif;font-size:21px;font-weight:700;letter-spacing:.2px}
+.logo b{color:var(--accent)}
+nav .tag{font-size:12.5px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+nav .navlink{font-size:14px;color:var(--muted);text-decoration:none}
+nav .navlink:hover{color:var(--accent-dark)}
+.hero{padding:64px 0 44px;text-align:center}
+.kicker{font-family:'Caveat',cursive;font-size:26px;color:var(--accent)}
+h1{font-family:'Playfair',serif;font-size:52px;line-height:1.12;margin:14px 0 18px;font-weight:700}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:680px;margin:0 auto 30px}
+.stats{display:flex;gap:8px 26px;justify-content:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted);padding:0 0 26px}
+.stats b{color:var(--ink)}
+.form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:660px;margin:0 auto}
+.form input[type=email],.form select{padding:15px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;background:var(--white);font-family:inherit;color:var(--ink)}
+.form input[type=email]{flex:1;min-width:240px}
+.form select{min-width:240px}
+.form select.empty{color:var(--muted)}
+.form button{padding:15px 26px;border:none;border-radius:12px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.form button:hover{background:var(--accent-dark)}
+.form-note{font-size:13px;color:var(--muted);margin-top:12px}
+.msg{margin-top:16px;font-weight:600;font-size:15px;display:none}
+.msg.ok{color:var(--sage)}.msg.err{color:#C0392B}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:26px 0 78px}
+.card{background:var(--white);border:1.5px solid var(--line);border-radius:18px;padding:28px 24px}
+.card .n{font-family:'Playfair',serif;font-size:26px;color:var(--accent);margin-bottom:10px}
+.card h3{font-size:16.5px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--muted)}
+.samples{background:var(--white);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:64px 0}
+.samples h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:10px}
+.samples .lead{text-align:center;color:var(--muted);margin-bottom:36px;font-size:15.5px}
+.sample-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.sample{border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center;background:var(--cream)}
+.sample h4{font-size:16px;margin-bottom:4px}
+.sample p{font-size:13.5px;color:var(--muted)}
+.sample .go{white-space:nowrap;font-size:14px;font-weight:600;text-decoration:none}
+.howto{padding:64px 0}
+.howto h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:40px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.step .n2{font-family:'Playfair',serif;font-size:34px;color:var(--accent)}
+.step h4{font-size:16px;margin:8px 0 6px}
+.step p{font-size:14px;color:var(--muted)}
+.faq{padding:12px 0 64px}
+.faq h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:36px}
+details{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+summary{font-weight:600;cursor:pointer;font-size:15px}
+details p{font-size:14px;color:var(--muted);margin-top:10px}
+.cta{text-align:center;padding:26px 0 72px}
+.cta h2{font-family:'Playfair',serif;font-size:32px;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:24px}
+footer{border-top:1.5px solid var(--line);padding:26px 0;text-align:center;font-size:13px;color:var(--muted)}
+/* sample page */
+.shead{padding:54px 0 30px;text-align:center}
+.shead .note{display:inline-block;background:var(--soft);border:1.5px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13.5px;color:var(--muted);margin-top:14px}
+.idea{background:var(--white);border:1.5px solid var(--line);border-radius:18px;padding:34px 34px 30px;margin:0 0 26px}
+.idea-head{display:flex;gap:18px;align-items:flex-start}
+.idea-head .num{font-family:'Playfair',serif;font-size:40px;color:var(--accent);line-height:1}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--soft);border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.chip.diff{color:var(--sage)}
+.idea h2{font-family:'Playfair',serif;font-size:26px;line-height:1.2}
+.oneliner{font-size:16px;color:var(--muted);margin:12px 0 22px;font-style:italic}
+.complain{border-left:4px solid var(--accent);background:var(--cream);border-radius:0 14px 14px 0;padding:18px 22px;margin-bottom:22px}
+.complain h3{font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent-dark);margin-bottom:8px}
+blockquote{font-size:15.5px;line-height:1.65}
+.complain .src{font-size:13px;color:var(--muted);margin-top:12px}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+.grid4 h4{font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:6px}
+.grid4 p{font-size:14px;color:#4A463F}
+@media(max-width:760px){h1{font-size:36px}.feats,.steps{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.sample{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <div class="logo">Painpoint<b>Index</b></div>
+  <div><span class="tag">beta preview</span></div>
+</nav>
+<section class="hero wrap">
+  <div class="kicker">business ideas from real complaints</div>
+  <h1>Every idea here starts with<br>someone complaining online</h1>
+  <p class="sub">The Painpoint Index is a curated database of small business ideas mined from public
+  complaints — the furious, the stuck, the &ldquo;someone please build this&rdquo;. Each idea comes with the
+  original post, the pain behind it, a monetization sketch, and the risks.</p>
+  <div class="stats">
+    <span><b>237</b> threads scanned</span><span><b>10</b> communities</span>
+    <span><b>19</b> ideas curated</span><span><b>5</b> free full examples below</span>
+  </div>
+
+  <form class="form" id="wl" action="https://formsubmit.co/ce52c65b8516ecfb7d23f7f2814db819" method="POST">
+    <input type="hidden" name="_subject" value="Painpoint Index signup">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="email" name="email" placeholder="you@email.com" required>
+    <select name="would_pay" aria-label="Would you pay for the full Index?">
+      <option value="" selected>Would you pay for the full Index? (optional)</option>
+      <option value="yes-19">Yes — around $19</option>
+      <option value="yes-39">Yes — around $39</option>
+      <option value="yes-79">Yes — $79 or more</option>
+      <option value="maybe">Maybe — depends on the content</option>
+      <option value="no-free">No — free content only</option>
+    </select>
+    <button type="submit">Join the early-bird list</button>
+  </form>
+  <div class="msg" id="msg"></div>
+
+  <div class="form-note">Free sample below · One launch email, no spam · Tell us what you&rsquo;d pay</div>
+</section>
+
+<section class="feats wrap">
+  <div class="card"><div class="n">01</div><h3>Verbatim complaints</h3>
+    <p>Every idea is quoted word-for-word from a public post, with the link to the original thread. Not a paraphrase, not a guess — go check it yourself.</p></div>
+  <div class="card"><div class="n">02</div><h3>The build brief</h3>
+    <p>Who has the pain, why now, a monetization sketch, build difficulty, and the risks we see — the context you need to judge it in two minutes.</p></div>
+  <div class="card"><div class="n">03</div><h3>Filtered for solo builders</h3>
+    <p>No moonshots, no &ldquo;raise a round&rdquo;. Only concepts one person can ship or productize on a small budget.</p></div>
+</section>
+
+<section class="samples">
+  <div class="wrap">
+    <h2>Free: five full examples</h2>
+    <p class="lead">This is the exact format of the full Index. Read all five — no email required.</p>
+    <div class="sample-list">
+    <div class="sample">
+      <div><h4>Streak app where hitting milestones ships your rewards</h4><p>Habit challenges you prove by uploads and streaks that never lie - and pre-purchased rewards that ship the day you hit the milestone.</p></div>
+      <a class="go" href="sample.html#streak-reward-app">Read the full example →</a>
+    </div>
+    <div class="sample">
+      <div><h4>Reliable-worker pipeline for home staffing (nannies, housekeepers)</h4><p>A niche recruiting pipeline and reliability layer for domestic-staffing agencies: pre-vetted workers, replacement guarantees and pay-rate data.</p></div>
+      <a class="go" href="sample.html#homestaff-pipeline">Read the full example →</a>
+    </div>
+    <div class="sample">
+      <div><h4>Honest audits: fixed-price Etsy shop reviews by sellers with receipts</h4><p>A vetted marketplace of fixed-price Etsy shop audits by sellers who show their own numbers - the antidote to $2k &#x27;free call&#x27; coaching funnels.</p></div>
+      <a class="go" href="sample.html#etsy-audit-market">Read the full example →</a>
+    </div>
+    <div class="sample">
+      <div><h4>Bookkeeping-escape: simple books for owners leaving QuickBooks</h4><p>A dead-simple bookkeeping app (or done-for-you clean-up service) for micro-businesses furious at Intuit&#x27;s pricing, support and forced upgrades.</p></div>
+      <a class="go" href="sample.html#bookkeeping-escape">Read the full example →</a>
+    </div>
+    <div class="sample">
+      <div><h4>Warehouse-store item finder (the &#x27;what aisle is it in&#x27; map)</h4><p>Crowd-sourced, searchable aisle+bay maps for warehouse stores so shoppers stop wandering - and staff stop answering the same question.</p></div>
+      <a class="go" href="sample.html#warehouse-item-finder">Read the full example →</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="howto wrap">
+  <h2>How ideas get in</h2>
+  <div class="steps">
+    <div class="step"><div class="n2">01</div><h4>Scan</h4>
+      <p>Public threads from ten pain-rich communities are scanned and scored for complaint, urgency and spend signals.</p></div>
+    <div class="step"><div class="n2">02</div><h4>Curate</h4>
+      <p>The shortlist gets a manual quality pass: real pain, a reachable customer, and a product small enough to actually sell.</p></div>
+    <div class="step"><div class="n2">03</div><h4>Write up</h4>
+      <p>Full writeups: quote + source link, who has the pain, why now, monetization sketch, difficulty, risks.</p></div>
+  </div>
+</section>
+
+<section class="faq wrap">
+  <h2>Questions</h2>
+  <details><summary>What exactly is this?</summary>
+    <p>During beta, the Painpoint Index is a one-time-purchase database of curated, sourced business ideas, sold as a download. This page is the preview + early-bird list while we confirm enough people want it. If we don&rsquo;t, we won&rsquo;t waste your inbox.</p></details>
+  <details><summary>How were these ideas picked?</summary>
+    <p>Automated scanning of public Reddit threads, then a manual curation pass — every published idea links to its source post. Nothing here is invented: if a complaint isn&rsquo;t real, the idea doesn&rsquo;t make the Index.</p></details>
+  <details><summary>How much will the full Index cost?</summary>
+    <p>Early-bird pricing will sit under $40 one-time and lock in at launch. The form above asks what you&rsquo;d pay — the honest answer helps us decide whether to build it at all.</p></details>
+  <details><summary>What do I get for joining the early-bird list?</summary>
+    <p>First access when the full Index opens, the early-bird price, and occasional build-in-public updates. One or two emails, that&rsquo;s it.</p></details>
+  <details><summary>Is this AI-generated slop?</summary>
+    <p>The scan is automated; the curation and writeups are human-reviewed, and every quote is verbatim with a public source link. Judge it yourself — the five examples are free.</p></details>
+</section>
+
+<section class="cta wrap">
+  <h2>Want the full set?</h2>
+  <p>The full Index currently holds 19 curated ideas like these. Join the early-bird list and lock in the launch price.</p>
+
+  <form class="form" id="wl2" action="https://formsubmit.co/ce52c65b8516ecfb7d23f7f2814db819" method="POST">
+    <input type="hidden" name="_subject" value="Painpoint Index signup">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="email" name="email" placeholder="you@email.com" required>
+    <select name="would_pay" aria-label="Would you pay for the full Index?">
+      <option value="" selected>Would you pay for the full Index? (optional)</option>
+      <option value="yes-19">Yes — around $19</option>
+      <option value="yes-39">Yes — around $39</option>
+      <option value="yes-79">Yes — $79 or more</option>
+      <option value="maybe">Maybe — depends on the content</option>
+      <option value="no-free">No — free content only</option>
+    </select>
+    <button type="submit">Join the early-bird list</button>
+  </form>
+  <div class="msg" id="msg2"></div>
+
+</section>
+
+<footer class="wrap">
+  The Painpoint Index · an independent research project · quotes are verbatim excerpts from public posts, linked at source · 2026
+</footer>
+<script>
+function wire(formId, msgId){
+  var form=document.getElementById(formId), msg=document.getElementById(msgId);
+  if(!form || !msg) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var payload={};
+    new FormData(form).forEach(function(v,k){ payload[k]=v; });
+    var ajaxUrl=form.action.replace('/formsubmit.co/','/formsubmit.co/ajax/');
+    fetch(ajaxUrl,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(j.success===true||j.success==='true'){ msg.textContent='You\'re on the list! We\'ll email you when the full Index opens.'; msg.className='msg ok'; msg.style.display='block'; form.reset(); }
+        else{ msg.textContent='Something went wrong — try again in a moment.'; msg.className='msg err'; msg.style.display='block'; }
+      })
+      .catch(function(){ msg.textContent='Something went wrong — try again in a moment.'; msg.className='msg err'; msg.style.display='block'; });
+  });
+}
+
+wire('wl','msg'); wire('wl2','msg2');
+</script>
+</body>
+</html>
