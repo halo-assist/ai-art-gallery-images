@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five full examples — The Painpoint Index</title>
+<meta name="description" content="Five complete idea writeups from the Painpoint Index: verbatim complaints with source links, monetization sketches, difficulty and risks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#26241F;--muted:#6E6A63;--accent:#B5673E;--accent-dark:#8F4E2C;--sage:#7A8B6F;--cream:#FAF7F2;--line:#E8E1D6;--white:#fff;--soft:#F3EDE4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a{color:var(--accent-dark)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:'Playfair',serif;font-size:21px;font-weight:700;letter-spacing:.2px}
+.logo b{color:var(--accent)}
+nav .tag{font-size:12.5px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+nav .navlink{font-size:14px;color:var(--muted);text-decoration:none}
+nav .navlink:hover{color:var(--accent-dark)}
+.hero{padding:64px 0 44px;text-align:center}
+.kicker{font-family:'Caveat',cursive;font-size:26px;color:var(--accent)}
+h1{font-family:'Playfair',serif;font-size:52px;line-height:1.12;margin:14px 0 18px;font-weight:700}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:680px;margin:0 auto 30px}
+.stats{display:flex;gap:8px 26px;justify-content:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted);padding:0 0 26px}
+.stats b{color:var(--ink)}
+.form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:660px;margin:0 auto}
+.form input[type=email],.form select{padding:15px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;background:var(--white);font-family:inherit;color:var(--ink)}
+.form input[type=email]{flex:1;min-width:240px}
+.form select{min-width:240px}
+.form select.empty{color:var(--muted)}
+.form button{padding:15px 26px;border:none;border-radius:12px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.form button:hover{background:var(--accent-dark)}
+.form-note{font-size:13px;color:var(--muted);margin-top:12px}
+.msg{margin-top:16px;font-weight:600;font-size:15px;display:none}
+.msg.ok{color:var(--sage)}.msg.err{color:#C0392B}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:26px 0 78px}
+.card{background:var(--white);border:1.5px solid var(--line);border-radius:18px;padding:28px 24px}
+.card .n{font-family:'Playfair',serif;font-size:26px;color:var(--accent);margin-bottom:10px}
+.card h3{font-size:16.5px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--muted)}
+.samples{background:var(--white);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:64px 0}
+.samples h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:10px}
+.samples .lead{text-align:center;color:var(--muted);margin-bottom:36px;font-size:15.5px}
+.sample-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.sample{border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center;background:var(--cream)}
+.sample h4{font-size:16px;margin-bottom:4px}
+.sample p{font-size:13.5px;color:var(--muted)}
+.sample .go{white-space:nowrap;font-size:14px;font-weight:600;text-decoration:none}
+.howto{padding:64px 0}
+.howto h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:40px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.step .n2{font-family:'Playfair',serif;font-size:34px;color:var(--accent)}
+.step h4{font-size:16px;margin:8px 0 6px}
+.step p{font-size:14px;color:var(--muted)}
+.faq{padding:12px 0 64px}
+.faq h2{font-family:'Playfair',serif;font-size:32px;text-align:center;margin-bottom:36px}
+details{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+summary{font-weight:600;cursor:pointer;font-size:15px}
+details p{font-size:14px;color:var(--muted);margin-top:10px}
+.cta{text-align:center;padding:26px 0 72px}
+.cta h2{font-family:'Playfair',serif;font-size:32px;margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:24px}
+footer{border-top:1.5px solid var(--line);padding:26px 0;text-align:center;font-size:13px;color:var(--muted)}
+/* sample page */
+.shead{padding:54px 0 30px;text-align:center}
+.shead .note{display:inline-block;background:var(--soft);border:1.5px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13.5px;color:var(--muted);margin-top:14px}
+.idea{background:var(--white);border:1.5px solid var(--line);border-radius:18px;padding:34px 34px 30px;margin:0 0 26px}
+.idea-head{display:flex;gap:18px;align-items:flex-start}
+.idea-head .num{font-family:'Playfair',serif;font-size:40px;color:var(--accent);line-height:1}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chip{background:var(--soft);border:1.5px solid var(--line);border-radius:999px;padding:3px 12px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.chip.diff{color:var(--sage)}
+.idea h2{font-family:'Playfair',serif;font-size:26px;line-height:1.2}
+.oneliner{font-size:16px;color:var(--muted);margin:12px 0 22px;font-style:italic}
+.complain{border-left:4px solid var(--accent);background:var(--cream);border-radius:0 14px 14px 0;padding:18px 22px;margin-bottom:22px}
+.complain h3{font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent-dark);margin-bottom:8px}
+blockquote{font-size:15.5px;line-height:1.65}
+.complain .src{font-size:13px;color:var(--muted);margin-top:12px}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+.grid4 h4{font-size:12.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:6px}
+.grid4 p{font-size:14px;color:#4A463F}
+@media(max-width:760px){h1{font-size:36px}.feats,.steps{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.sample{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <div class="logo">Painpoint<b>Index</b></div>
+  <div><a class="navlink" href="index.html">&larr; back to the Index</a></div>
+</nav>
+<section class="shead wrap">
+  <div class="kicker">from the painpoint index</div>
+  <h1>Five examples, in full</h1>
+  <p class="sub">Complete writeups, exactly as they appear in the Index: quote, source link, the pain,
+  the timing, a monetization sketch, difficulty and risks.</p>
+  <div class="note">Every quote below is a verbatim excerpt from a linked public post — verify any of them.</div>
+</section>
+
+<div class="wrap">
+
+<article class="idea" id="streak-reward-app">
+  <div class="idea-head">
+    <div class="num">01</div>
+    <div>
+      <div class="chips"><span class="chip">Consumer app</span><span class="chip diff">build difficulty: high</span></div>
+      <h2>Streak app where hitting milestones ships your rewards</h2>
+    </div>
+  </div>
+  <p class="oneliner">Habit challenges you prove by uploads and streaks that never lie - and pre-purchased rewards that ship the day you hit the milestone.</p>
+  <div class="complain">
+    <h3>The complaint</h3>
+    <blockquote>&ldquo;There should be a reward option, obv which we will buy/get it for ourselves for every 25 days until the challenge ends. Ex: I have a streak of 25 days, on the 25th day I can buy that thing I always wanted to buy. like you pay for it before or order it or something, and get it shipped on the day when you reach the streak.&rdquo;</blockquote>
+    <p class="src">— u/Lazy-Mastodon7561 · r/SomebodyMakeThis · posted 2026-09-22 · <a href="https://www.reddit.com/r/SomebodyMakeThis/comments/1wnjc3m/someone_pls_make_this_app/" target="_blank" rel="noopener">view the source post</a></p>
+  </div>
+  <div class="grid4">
+    <div><h4>Who has the pain</h4><p>Challenge-takers (learning, fitness, goals) who abandon habit apps because nothing is at stake; high-intent community (the post drew immediate builders offering similar prototypes).</p></div>
+    <div><h4>Why now</h4><p>Streak psychology is mainstream, but delayed-reward commerce (&#x27;your prize ships when you hit day 25&#x27;) is a genuinely novel mechanic with no big player. Community reaction shows pull.</p></div>
+    <div><h4>Monetization sketch</h4><p>Subscription + margin on reward fulfillment/affiliate; the reward pre-purchase is inherent to the model (users fund their own prizes).</p></div>
+    <div><h4>Risks</h4><p>Fulfillment/shipping ops complicate a &#x27;software&#x27; product; refunds/undelivered rewards hurt trust; habit-app churn is brutal.</p></div>
+  </div>
+</article>
+<article class="idea" id="homestaff-pipeline">
+  <div class="idea-head">
+    <div class="num">02</div>
+    <div>
+      <div class="chips"><span class="chip">B2B service</span><span class="chip diff">build difficulty: high</span></div>
+      <h2>Reliable-worker pipeline for home staffing (nannies, housekeepers)</h2>
+    </div>
+  </div>
+  <p class="oneliner">A niche recruiting pipeline and reliability layer for domestic-staffing agencies: pre-vetted workers, replacement guarantees and pay-rate data.</p>
+  <div class="complain">
+    <h3>The complaint</h3>
+    <blockquote>&ldquo;There are still families reaching out and willing to pay, so getting clients isn&#x27;t really the problem. The bottleneck is finding reliable workers who actually want these jobs, especially live-in positions.&rdquo;</blockquote>
+    <p class="src">— u/Ok_Jeweler_2142 · r/smallbusiness · posted 2026-08-28 · <a href="https://www.reddit.com/r/smallbusiness/comments/1w0ejil/my_small_business_is_collapsing_and_feels_like_my/" target="_blank" rel="noopener">view the source post</a></p>
+  </div>
+  <div class="grid4">
+    <div><h4>Who has the pain</h4><p>Domestic-staffing agencies and families filling housekeeper/nanny roles (especially live-in) - demand exceeds vetted supply.</p></div>
+    <div><h4>Why now</h4><p>Labor scarcity for in-home roles is structural; agencies rely on word-of-mouth recruiting that cannot scale. A pipeline product (pool + screening + reliability tracking) attacks the exact bottleneck, and a commenter reports cleaning-industry staffing margins are strong (3-6 month contracts).</p></div>
+    <div><h4>Monetization sketch</h4><p>Per-placement fee share with agencies; subscribing agencies pay for vetted-pool access; premium listings to families. Commenters suggested premium pricing on both sides as the fix.</p></div>
+    <div><h4>Risks</h4><p>Two-sided ops with real humans; background checks and local labor rules; trust/safety failures are costly. Start narrow (one city, one role).</p></div>
+  </div>
+</article>
+<article class="idea" id="etsy-audit-market">
+  <div class="idea-head">
+    <div class="num">03</div>
+    <div>
+      <div class="chips"><span class="chip">Marketplace</span><span class="chip diff">build difficulty: low</span></div>
+      <h2>Honest audits: fixed-price Etsy shop reviews by sellers with receipts</h2>
+    </div>
+  </div>
+  <p class="oneliner">A vetted marketplace of fixed-price Etsy shop audits by sellers who show their own numbers - the antidote to $2k &#x27;free call&#x27; coaching funnels.</p>
+  <div class="complain">
+    <h3>The complaint</h3>
+    <blockquote>&ldquo;I was offered the program for around $2,000, with a payment plan. However, I was told that this offer was ONLY available if I enrolled while we were still on the phone. If I ended the call without purchasing, the price would increase to $3,000.&rdquo;</blockquote>
+    <p class="src">— u/Proud_Present2080 · r/EtsySellers · posted 2026-09-17 · <a href="https://www.reddit.com/r/EtsySellers/comments/1wiwgxt/booked_a_free_etsy_coaching_call_and_was/" target="_blank" rel="noopener">view the source post</a></p>
+  </div>
+  <div class="grid4">
+    <div><h4>Who has the pain</h4><p>Small Etsy sellers who need practical listing/SEO/photo advice and keep getting harvested by coaching funnels.</p></div>
+    <div><h4>Why now</h4><p>Coaching-scam horror stories are a steady genre in seller communities; trust is the differentiator. An &#x27;audit, not coaching&#x27; format avoids the high-pressure-call model sellers explicitly reject.</p></div>
+    <div><h4>Monetization sketch</h4><p>$75-150 per audit with 15-20% platform take rate; later referral fees for photography/SEO tools. Start as a curated service, productize later.</p></div>
+    <div><h4>Risks</h4><p>Vetting auditors (must show verifiable results); no guaranteed-results claims; Etsy&#x27;s own TOS on advice claims.</p></div>
+  </div>
+</article>
+<article class="idea" id="bookkeeping-escape">
+  <div class="idea-head">
+    <div class="num">04</div>
+    <div>
+      <div class="chips"><span class="chip">B2B software</span><span class="chip diff">build difficulty: medium</span></div>
+      <h2>Bookkeeping-escape: simple books for owners leaving QuickBooks</h2>
+    </div>
+  </div>
+  <p class="oneliner">A dead-simple bookkeeping app (or done-for-you clean-up service) for micro-businesses furious at Intuit&#x27;s pricing, support and forced upgrades.</p>
+  <div class="complain">
+    <h3>The complaint</h3>
+    <blockquote>&ldquo;For the love of God, please cancel your Intuit Quickbooks subscription. I literally just spent 2.5 hours of my time trying to troubleshoot a few accounts that Intuit disconnected. I had to troubleshoot with their chat box because they don&#x27;t offer any support.&rdquo;</blockquote>
+    <p class="src">— u/ohsnapea · r/smallbusiness · posted 2026-09-11 · <a href="https://www.reddit.com/r/smallbusiness/comments/1wdufyq/intuit_quicbooks_is_a_scam/" target="_blank" rel="noopener">view the source post</a></p>
+  </div>
+  <div class="grid4">
+    <div><h4>Who has the pain</h4><p>Owner-operators of micro-businesses (0-10 staff) on QuickBooks who hit bank-feed failures, price rises and support walls.</p></div>
+    <div><h4>Why now</h4><p>QuickBooks frustration is a recurring, high-anger thread; switching feels scary, so a &#x27;we migrate you&#x27; offer removes the friction. Simple flat-fee alternatives for tiny businesses are underserved below the Wave/Xero tier.</p></div>
+    <div><h4>Monetization sketch</h4><p>One-off &#x27;QuickBooks escape&#x27; migration + cleanup service ($150-400) as the wedge; upsell to a flat $9-19/mo simple books app. Referral fees from accountants/CPAs.</p></div>
+    <div><h4>Risks</h4><p>Bookkeeping is trust-heavy; bank feeds and integrations are the hard engineering part. Must be honest about what the app does NOT do (payroll, tax filing) - partner with an accountant.</p></div>
+  </div>
+</article>
+<article class="idea" id="warehouse-item-finder">
+  <div class="idea-head">
+    <div class="num">05</div>
+    <div>
+      <div class="chips"><span class="chip">Consumer app</span><span class="chip diff">build difficulty: medium</span></div>
+      <h2>Warehouse-store item finder (the &#x27;what aisle is it in&#x27; map)</h2>
+    </div>
+  </div>
+  <p class="oneliner">Crowd-sourced, searchable aisle+bay maps for warehouse stores so shoppers stop wandering - and staff stop answering the same question.</p>
+  <div class="complain">
+    <h3>The complaint</h3>
+    <blockquote>&ldquo;Costco famously doesn&#x27;t have signs in their aisles that tell you what items are in there. So my app idea is &quot;Costco Maps&quot; which is a real-time-public-updated map of all Costco stores and which items are in which aisle, searchable and browsable.&rdquo;</blockquote>
+    <p class="src">— u/sowtime444 · r/AppIdeas · posted 2026-09-21 · <a href="https://www.reddit.com/r/AppIdeas/comments/1wmpxji/costco_maps/" target="_blank" rel="noopener">view the source post</a></p>
+  </div>
+  <div class="grid4">
+    <div><h4>Who has the pain</h4><p>Warehouse-club shoppers (especially new members and non-regulars); anyone hunting a specific item in a huge store.</p></div>
+    <div><h4>Why now</h4><p>No official aisle data exists; crowd-sourcing scales; the app is inherently viral (solving the pain in-store). Monetization via ads/featured placement is natural for high-intent grocery searches.</p></div>
+    <div><h4>Monetization sketch</h4><p>Free with ads/sponsored placements (brands pay for in-aisle visibility); premium for price-history/deal alerts.</p></div>
+    <div><h4>Risks</h4><p>Cold-start data density (needs per-store contributors); store layouts drift; trademark caution (don&#x27;t use store branding as the product name).</p></div>
+  </div>
+</article>
+
+<section class="cta">
+  <h2>Like these? There are 14 more.</h2>
+  <p>Join the early-bird list and we&rsquo;ll email you when the full Index opens — early-bird price locked in.</p>
+
+  <form class="form" id="wl" action="https://formsubmit.co/ce52c65b8516ecfb7d23f7f2814db819" method="POST">
+    <input type="hidden" name="_subject" value="Painpoint Index signup">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="email" name="email" placeholder="you@email.com" required>
+    <select name="would_pay" aria-label="Would you pay for the full Index?">
+      <option value="" selected>Would you pay for the full Index? (optional)</option>
+      <option value="yes-19">Yes — around $19</option>
+      <option value="yes-39">Yes — around $39</option>
+      <option value="yes-79">Yes — $79 or more</option>
+      <option value="maybe">Maybe — depends on the content</option>
+      <option value="no-free">No — free content only</option>
+    </select>
+    <button type="submit">Join the early-bird list</button>
+  </form>
+  <div class="msg" id="msg"></div>
+
+</section>
+</div>
+
+<footer class="wrap">
+  The Painpoint Index · an independent research project · quotes are verbatim excerpts from public posts, linked at source · 2026
+</footer>
+<script>
+function wire(formId, msgId){
+  var form=document.getElementById(formId), msg=document.getElementById(msgId);
+  if(!form || !msg) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var payload={};
+    new FormData(form).forEach(function(v,k){ payload[k]=v; });
+    var ajaxUrl=form.action.replace('/formsubmit.co/','/formsubmit.co/ajax/');
+    fetch(ajaxUrl,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(j.success===true||j.success==='true'){ msg.textContent='You\'re on the list! We\'ll email you when the full Index opens.'; msg.className='msg ok'; msg.style.display='block'; form.reset(); }
+        else{ msg.textContent='Something went wrong — try again in a moment.'; msg.className='msg err'; msg.style.display='block'; }
+      })
+      .catch(function(){ msg.textContent='Something went wrong — try again in a moment.'; msg.className='msg err'; msg.style.display='block'; });
+  });
+}
+
+wire('wl','msg');
+</script>
+</body>
+</html>
